@@ -1,0 +1,20 @@
+exec_always --no-startup-id picom --config ~/.config/i3/picom.conf
+exec_always --no-startup-id numlock on
+exec_always --no-startup-id autotiling
+
+exec $HOME/.screenlayout/default.sh
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+exec --no-startup-id feh --bg-fill ~/wallpaper.jpg
+exec tint2 &
+exec --no-startup-id xfce4-power-manager &
+exec --no-startup-id libinput-gestures-setup start
+
+#exec --no-startup-id pamac-tray
+#exec --no-startup-id blueberry-tray
+#exec --no-startup-id nm-applet &
+#exec --no-startup-id volumeicon &
+#exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
+#exec --no-startup-id /usr/lib/gsd-xsettings
+#exec_always --no-startup-id gnome-power-manager
+#exec --no-startup-id gnome-flashback
+#exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit

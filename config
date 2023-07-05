@@ -1,4 +1,8 @@
-include ./keybinds
+################# Start of all the settings
+include ~/.config/i3/keybinds
+include ~/.config/i3/window_rules
+include ~/.config/i3/autostart
+include ~/.config/i3/theme
 
 # KEY DEFINITIONS TO REMEMBER
 # $mod = Set below
@@ -13,132 +17,14 @@ include ./keybinds
 # Print = PRINT key
 # Tab = TAB key
 
-################# autostart - execute applications at boot time
-exec_always --no-startup-id picom --config ~/.config/i3/picom.conf 
-exec_always --no-startup-id numlock on
-exec_always --no-startup-id autotilingf
-
-exec $HOME/.screenlayout/default.sh
-exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
-exec --no-startup-id feh --bg-fill ~/wallpaper.jpg 
-exec tint2 &
-exec --no-startup-id xfce4-power-manager &
-exec --no-startup-id libinput-gestures-setup start
-
-#exec --no-startup-id pamac-tray
-#exec --no-startup-id blueberry-tray
-#exec --no-startup-id nm-applet &
-#exec --no-startup-id volumeicon &
-#exec --no-startup-id /usr/lib/xfce4/notifyd/xfce4-notifyd &
-#exec --no-startup-id /usr/lib/gsd-xsettings
-#exec_always --no-startup-id gnome-power-manager
-#exec --no-startup-id gnome-flashback
-#exec --no-startup-id /usr/lib/xfce-polkit/xfce-polkit
-
-####### workspaces
-# set $ws1 ""
-# set $ws2 "#"
-# set $ws3 ""
-# set $ws4 ""
-# set $ws5 ""
-# set $ws6 ""
-# set $ws7 ""
-
-set $ws1 "1:1"
-set $ws2 "2:2"
-set $ws3 "3:3"
-set $ws4 "4:4"
-set $ws5 "5:5"
-set $ws6 "6:6"
-set $ws7 "7:7"
-set $ws8 "8:8"
-set $ws9 "9:9"
-set $ws0 "0:0"
-
-################# choose the font                  
-font pango:FontAwesome Regular 16
-
-################# assign applications to workspaces 
-# assign [class="kitty"]			$ws1
-# 
-# assign [class="firefox"]		$ws2
-# 
-# assign [class="code-oss"]		$ws3
-# assign [class="jetbrains"]		$ws3
-# 
-# assign [class="YoutubeMusic"]	$ws4
-# assign [class="youtube music"]	$ws4
-# assign [class="YouTube Music"]	$ws4
-# assign [class="Pavucontrol"]	$ws4
-# 
-# assign [class="Thunar"]			$ws5
-# assign [class="Nemo"]			$ws5
-# assign [class="Pcmanfm"]		$ws5
-# 
-# assign [class="Tint2"]			$ws6
-# assign [class="Lxappearance"]	$ws6
-# assign [class="Font-manager "]	$ws6
-# 
-# assign [class="Gnome-boxes"]	$ws7
-
-################# floating or tiled rules
-for_window [urgent=latest] focus
-for_window [class="^.*"] border pixel 6, focus
-for_window [class="Arcolinux-welcome-app.py"]		floating enable
-for_window [class="Bleachbit"]						floating disable
-for_window [class="Blueberry.py"]					floating enable
-for_window [class="Galculator"]						floating enable
-for_window [class="Gnome-disks"]					floating disable
-for_window [class="^Gnome-font-viewer$"]			floating enable
-for_window [class="^Gpick$"]						move scratchpad, scratchpad show; resize set 800 500
-for_window [class="Imagewriter"] 					floating enable
-for_window [class="Font-manager"] 					floating enable
-for_window [class="Nitrogen"] 						floating disable
-for_window [class="Pavucontrol"]					move scratchpad, resize set 1850 950, move absolute position center
-for_window [class="1Password"]						move scratchpad, resize set 1050 950, move absolute position center
-for_window [class="Unetbootin.elf"] 			floating enable
-for_window [class="Usb-creator-gtk"]			floating enable
-for_window [class="^Vlc$"]						floating disable
-for_window [class="Xfce4-appfinder"]			floating enable
-for_window [class="Xfce4-settings-manager"]		floating disable
-for_window [class="Xfce4-taskmanager"]			floating enable
-
-for_window [instance="script-fu"] 				border normal
-for_window [instance="variety"] 				floating disable
-
-for_window [title="Copying"]					floating enable
-for_window [title="Deleting"]					floating enable
-for_window [title="Moving"]						floating enable
-for_window [title="^Terminator Preferences$"]	floating enable
-
-for_window [window_role="pop-up"]				floating enable
-for_window [window_role="^Preferences$"]		floating enable
-for_window [window_role="setup"]				floating enable
-
-################# notes scratch window
-for_window [class="note"]				floating enable;
-for_window [class="Tint2conf"]			floating disable
-for_window [class="TelegramDesktop"]	move scratchpad, resize set 1000 800, move absolute position center, scratchpad show; 
-
-new_window		normal
-new_float		normal
-title_align		center
-
-################# Popups  control  
-popup_during_fullscreen smart
-
-################# i3 gaps next     
-default_orientation horizontal
-        
-smart_borders on        
-gaps inner 5
-gaps outer 5
-
-################# theme                
-# class                 border  backgr. text    indic
-client.focused          #3b4d3d #3b4d3d #ededed #3b4d3d #3b4d3d
-client.unfocused        #343a40 #343a40 #bdbdbd #343a40
-client.focused_inactive #6c757d #6c757d #cdcdcd #6c757d
-client.placeholder      #343a40 #3b4d3d #343a40 #3b4d3d
-client.urgent           #d42121 #d42121 #f7f7f7 #d42121
-client.background       #242424
+################# Define the workspaces
+set $ws1 "1: 1"
+set $ws2 "2: 2"
+set $ws3 "3: 3"
+set $ws4 "4: 4"
+set $ws5 "5: 5"
+set $ws6 "6: 6"
+set $ws7 "7: 7"
+set $ws8 "8: 8"
+set $ws9 "9: 9"
+set $ws0 "0: 0"

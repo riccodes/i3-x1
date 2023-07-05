@@ -1,0 +1,61 @@
+################# floating or tiled rules
+for_window [urgent=latest] focus
+for_window [class="^.*"] border pixel 6, focus
+for_window [class="Arcolinux-welcome-app.py"]		floating enable
+for_window [class="Bleachbit"]						floating disable
+for_window [class="Blueberry.py"]					floating enable
+for_window [class="Galculator"]						floating enable
+for_window [class="Gnome-disks"]					floating disable
+for_window [class="^Gnome-font-viewer$"]			floating enable
+for_window [class="^Gpick$"]						move scratchpad, scratchpad show; resize set 800 500
+for_window [class="Imagewriter"] 					floating enable
+for_window [class="Font-manager"] 					floating enable
+for_window [class="Nitrogen"] 						floating disable
+for_window [class="Pavucontrol"]					move scratchpad, resize set 1850 950, move absolute position center
+for_window [class="1Password"]						move scratchpad, resize set 1050 950, move absolute position center
+for_window [class="Unetbootin.elf"] 			floating enable
+for_window [class="Usb-creator-gtk"]			floating enable
+for_window [class="^Vlc$"]						floating disable
+for_window [class="Xfce4-appfinder"]			floating enable
+for_window [class="Xfce4-settings-manager"]		floating disable1
+for_window [class="Xfce4-taskmanager"]			floating enable
+
+for_window [instance="script-fu"] 				border normal
+for_window [instance="variety"] 				floating disable
+
+for_window [title="Copying"]					floating enable
+for_window [title="Deleting"]					floating enable
+for_window [title="Moving"]						floating enable
+for_window [title="^Terminator Preferences$"]	floating enable
+
+for_window [window_role="pop-up"]				floating enable
+for_window [window_role="^Preferences$"]		floating enable
+for_window [window_role="setup"]				floating enable
+
+################# notes scratch window
+for_window [class="note"]				floating enable;
+for_window [class="Tint2conf"]			floating disable
+for_window [class="TelegramDesktop"]	move scratchpad, resize set 1000 800, move absolute position center, scratchpad show;
+
+################# assign applications to workspaces
+# assign [class="kitty"]			$ws1
+#
+# assign [class="firefox"]		$ws2
+#
+# assign [class="code-oss"]		$ws3
+# assign [class="jetbrains"]		$ws3
+#
+# assign [class="YoutubeMusic"]	$ws4
+# assign [class="youtube music"]	$ws4
+# assign [class="YouTube Music"]	$ws4
+# assign [class="Pavucontrol"]	$ws4
+#
+# assign [class="Thunar"]			$ws5
+# assign [class="Nemo"]			$ws5
+# assign [class="Pcmanfm"]		$ws5
+#
+# assign [class="Tint2"]			$ws6
+# assign [class="Lxappearance"]	$ws6
+# assign [class="Font-manager "]	$ws6
+#
+# assign [class="Gnome-boxes"]	$ws7

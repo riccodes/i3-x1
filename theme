@@ -1,0 +1,25 @@
+################ font
+font pango: FontAwesome Bold 16
+
+################# Behavior
+new_window		normal
+new_float		normal
+title_align		center
+popup_during_fullscreen smart
+default_orientation horizontal
+default_border 			        pixel 6
+default_floating_border         pixel 8
+hide_edge_borders 		        none
+focus_on_window_activation		urgent
+smart_borders on
+gaps inner 5
+gaps outer 5
+
+################# theme
+# class                 border  backgr. text    indic
+client.focused          #3b4d3d #3b4d3d #ededed #3b4d3d #3b4d3d
+client.unfocused        #343a40 #343a40 #bdbdbd #343a40
+client.focused_inactive #6c757d #6c757d #cdcdcd #6c757d
+client.placeholder      #343a40 #3b4d3d #343a40 #3b4d3d
+client.urgent           #d42121 #d42121 #f7f7f7 #d42121
+client.background       #242424
