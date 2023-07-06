@@ -17,9 +17,9 @@ gaps outer 						5
 
 ################# theme
 # class                 border  backgr. text    indic
-client.focused          #293D56 #293D56 #ededed #293D56 #293D56
+client.focused          #9E695D #9E695D #ededed #9E695D #9E695D
 client.unfocused        #343a40 #343a40 #bdbdbd #343a40
 client.focused_inactive #6c757d #6c757d #cdcdcd #6c757d
-client.placeholder      #343a40 #3b4d3d #343a40 #293D56
+client.placeholder      #343a40 #3b4d3d #343a40 #9E695D
 client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 client.background       #242424
