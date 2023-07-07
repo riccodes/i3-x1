@@ -7,6 +7,7 @@ new_float						normal
 title_align						center
 popup_during_fullscreen 		smart
 default_orientation 			horizontal
+workspace_layout				tabbed
 default_border 			        pixel 6
 default_floating_border         pixel 8
 hide_edge_borders 		        none
