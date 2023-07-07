@@ -93,6 +93,9 @@ bindsym $mod+r		exec --no-startup-id $HOME/.config/rofi/scripts/rename
 # decorations
 bindsym $mod+d border toggle 6
 
+# hideshow tint2
+bindsym $mod+b exec $HOME/codebase/scripts/panel-utils/hideshow
+
 ################# Modes
 ######### notes mode
 set $showNote      exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_note "mode: Notes" "\n[s]cratch\n[n]ew\n\nESC" -i /usr/share/icons/ePapirus-Dark/48x48/apps/bootstrap-studio.svg
@@ -103,7 +106,6 @@ mode "$mode_notes" {
     bindsym s exec --no-startup-id $HOME/codebase/scripts/panel-utils/notes scratch,    mode "default"; $dismissNote
     bindsym n exec --no-startup-id $HOME/codebase/scripts/panel-utils/notes new,        mode "default"; $dismissNote
 
-    # back to normal: Enter or Escape
     bindsym Return mode "default"; $dismissNote
     bindsym Escape mode "default"; $dismissNote
 }
@@ -121,7 +123,6 @@ mode "$mode_scratchpad" {
     bindsym t [title="Telegram"] scratchpad show, mode "default"; $dismissScratchpads
     bindsym 1 [title="1Password"] scratchpad show, mode "default"; $dismissScratchpads
 
-    # back to normal: Enter or Escape
     bindsym Return mode "default"; $dismissScratchpads
     bindsym Escape mode "default"; $dismissScratchpads
 }
@@ -144,13 +145,12 @@ mode "$mode_browser" {
     bindsym w exec firefox --new-window https://workflowy.com;        $dismissBrowser, mode "default"
     bindsym y exec firefox --new-window https://youtube.com;          $dismissBrowser, mode "default"
 
-    # back to normal: Enter or Escape
     bindsym Return mode "default"; $dismissBrowser
     bindsym Escape mode "default"; $dismissBrowser
 }
 
 ###### Resize floating mode
-set $showResize    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize "mode: Resize" "options: left right up down  ESC"
+set $showResize    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize "mode: Resize" "options: left right up down  ESC" -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/com.github.taiko2k.avvie.svg
 set $dismissResize exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize "exiting mode Resize"
 
 bindsym Mod1+r mode "resize"; $showResize
@@ -160,7 +160,6 @@ mode "resize" {
         bindsym Up          resize shrink height 10 px or 10 ppt
         bindsym Right       resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape or Mod1+r
         bindsym Return mode "default"; $dismissResize, mode "default"
         bindsym Escape mode "default"; $dismissResize, mode "default"
 }
@@ -174,11 +173,10 @@ mode "media" {
         bindsym space	  exec --no-startup-id playerctl play-pause
         bindsym Right     exec --no-startup-id playerctl next
         bindsym Left      exec --no-startup-id playerctl previous
-        bindsym Up        exec --no-startup-id $HOME/codebase/scripts/misc/vol up
-        bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/vol down
+        bindsym Up        exec --no-startup-id $HOME/codebase/scripts/misc/common/vol up
+        bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
         bindsym slash     [class="YouTube Music"] focus, mode "default"; $dismissMedia
 
-        # back to normal: Enter or Escape or Mod1+r
         bindsym Return mode "default"; $dismissMedia
         bindsym Escape mode "default"; $dismissMedia
 }
@@ -267,8 +265,8 @@ bindsym mod1+Up exec --no-startup-id variety --pause # resume wallpaper
 bindsym mod1+Down exec --no-startup-id variety --resume
 
 ################# audio settings                   
-bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/codebase/scripts/misc/vol up
-bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/codebase/scripts/misc/vol down
+bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/codebase/scripts/misc/common/vol up
+bindsym XF86AudioLowerVolume exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
 bindsym XF86AudioMute		 exec --no-startup-id "amixer -D pulse set Master toggle"
 
 bindsym XF86AudioPlay exec --no-startup-id playerctl play-pause

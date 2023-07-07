@@ -12,14 +12,16 @@ default_floating_border         pixel 8
 hide_edge_borders 		        none
 focus_on_window_activation		urgent
 smart_borders 					on
-gaps inner		 				5
-gaps outer 						5
+gaps inner		 				6
+gaps outer 						6
 
 ################# theme
 # class                 border  backgr. text    indic
 client.focused          #22577a #22577a #ededed #22577a #22577a
-client.unfocused        #343a40 #343a40 #bdbdbd #343a40
+client.unfocused        #22333b #22333b #bdbdbd #22333b
 client.focused_inactive #6c757d #6c757d #cdcdcd #6c757d
-client.placeholder      #343a40 #3b4d3d #343a40 #22577a
+client.placeholder      #22333b #3b4d3d #22333b #22577a
 client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 client.background       #242424
+
+#343a40
