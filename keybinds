@@ -98,8 +98,13 @@ bindsym $mod+b exec $HOME/codebase/scripts/panel-utils/hideshow
 
 ################# Modes
 ######### notes mode
-set $showNote      exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_note "mode: Notes" "\n[s]cratch\n[n]ew\n\nESC" -i /usr/share/icons/ePapirus-Dark/48x48/apps/bootstrap-studio.svg
-set $dismissNote   exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_note "exiting mode Notes" -i /usr/share/icons/ePapirus-Dark/48x48/apps/bootstrap-studio.svg
+set $showNote      exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_note \
+                       "mode: Notes" "\n[s]cratch\n[n]ew\n\nESC" \
+                       -i /usr/share/icons/ePapirus-Dark/48x48/apps/bootstrap-studio.svg
+set $dismissNote   exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_note \
+                       "exiting mode Notes" \
+                       -i /usr/share/icons/ePapirus-Dark/48x48/apps/bootstrap-studio.svg
+
 bindsym $mod+n mode "$mode_notes"; $showNote
 set $mode_notes notes:
 mode "$mode_notes" {
@@ -111,8 +116,13 @@ mode "$mode_notes" {
 }
 
 ######### scratchpad mode
-set $scratchpads        exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_scratchpad "mode: Scratchpad" "\n\ng[p]ick\nyt-[m]usic\np[a]vu\n[t]elegram\n[1]password]\n\nESC" -i /usr/share/icons/ePapirus-Dark/48x48/apps/asc-de.svg
-set $dismissScratchpads exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_scratchpad "exiting mode Scratchpad" -i /usr/share/icons/ePapirus-Dark/48x48/apps/asc-de.svg
+set $scratchpads        exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_scratchpad \
+                            "mode: Scratchpad" "\n\ng[p]ick\nyt-[m]usic\np[a]vu\n[t]elegram\n[1]password]\n\nESC" \
+                             -i /usr/share/icons/ePapirus-Dark/48x48/apps/asc-de.svg
+
+set $dismissScratchpads exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_scratchpad \
+                            "exiting mode Scratchpad" \
+                            -i /usr/share/icons/ePapirus-Dark/48x48/apps/asc-de.svg
 
 bindsym Mod1+Control+space mode "$mode_scratchpad"; $scratchpads
 set $mode_scratchpad scratchpads:
@@ -128,14 +138,31 @@ mode "$mode_scratchpad" {
 }
 
 ###### Browser mode
-set $showBrowser    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_browser "mode: Browser" "\n[a]mazon\n[d]oordash\n[g]oogle\ng[i]thub\ng[m]ail\ndistr[o]watch\n[t]asks\n[y]outbe\n[w]orkflowy\n[h]ome \n\nESC" -i /usr/share/icons/ePapirus-Dark/48x48/apps/abrowser.svg
-set $dismissBrowser exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_browser "exiting mode Browser" -i /usr/share/icons/ePapirus-Dark/48x48/apps/abrowser.svg
+set $showBrowser    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_browser \
+                        "mode: Browser" "\n[a]mazon\
+                                        \n[c]oolors\
+                                        \n[d]oordash\
+                                        \n[g]oogle\
+                                        \ng[i]thub\
+                                        \ng[m]ail\
+                                        \ndistr[o]watch\
+                                        \n[t]asks\
+                                        \n[y]outbe\
+                                        \n[w]orkflowy\
+                                        \n[h]ome\
+                                        \n\nESC" \
+                        -i /usr/share/icons/ePapirus-Dark/48x48/apps/abrowser.svg
+set $dismissBrowser exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_browser \
+                        "exiting mode Browser"\
+                         -i /usr/share/icons/ePapirus-Dark/48x48/apps/abrowser.svg
+
 bindsym $mod+w mode "$mode_browser"; $showBrowser
 set $mode_browser browser
 mode "$mode_browser" {
 
     bindsym h exec firefox;                                           $dismissBrowser, mode "default"
     bindsym a exec firefox --new-window https://amazon.com;           $dismissBrowser, mode "default"
+    bindsym c exec firefox --new-window https://coolors.co;           $dismissBrowser, mode "default"
     bindsym d exec firefox --new-window https://doordash.com;         $dismissBrowser, mode "default"
     bindsym i exec firefox --new-window https://github.com;           $dismissBrowser, mode "default"
     bindsym g exec firefox --new-window https://google.com;           $dismissBrowser, mode "default"
@@ -150,7 +177,9 @@ mode "$mode_browser" {
 }
 
 ###### Resize floating mode
-set $showResize    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize "mode: Resize" "options: left right up down  ESC" -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/com.github.taiko2k.avvie.svg
+set $showResize    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize\
+                        "mode: Resize" "options: left right up down  ESC"\
+                        -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/com.github.taiko2k.avvie.svg
 set $dismissResize exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_resize "exiting mode Resize"
 
 bindsym Mod1+r mode "resize"; $showResize
@@ -165,8 +194,12 @@ mode "resize" {
 }
 
 ###### Media mode
-set $showMedia    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media "mode: Media" "\nleft    ⏮\nright ⏭\nspc    ⏯\nup     🔊\ndw    🔉\n\nESC" -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
-set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media "exiting mode Media" -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
+set $showMedia    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
+                    "mode: Media" "\nleft    ⏮\nright ⏭\nspc    ⏯\nup     🔊\ndw    🔉\n\nESC"\
+                    -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
+set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
+                    "exiting mode Media"\
+                    -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
 
 bindsym $mod+m mode "media"; $showMedia
 mode "media" {
@@ -185,10 +218,14 @@ mode "media" {
 ################# gaps mode
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
-set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shi+ft + +|-|0 (global)
+set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shi+ft + +|-|0 (global)x
 
-set $showGaps    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_gaps "gaps mode" "[o]uter [i]nner [+][-]"
-set $dismissGaps exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_gaps "extings gaps mode" -t 500
+set $showGaps    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_gaps\
+                    "mode: Gaps" "\n[o]uter [+][-]\n[i]nner [+][-]"\
+                    -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/applications-all.svg
+set $dismissGaps exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_gaps\
+                    "exiting mode Gaps"\
+                     -t 500
 
 bindsym $mod+Shift+g mode "$mode_gaps"; $showGaps
 mode "$mode_gaps" {
