@@ -2,7 +2,6 @@
 for_window [urgent=latest]                      focus
 for_window [class="^.*"]                        border pixel 6, focus, title_window_icon padding 8px, move absolute position center
 
-
 for_window [class="Nitrogen"] 					floating disable
 for_window [class="Bleachbit"]					floating disable
 for_window [class="Gnome-disks"]				floating disable
