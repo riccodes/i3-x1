@@ -12,7 +12,6 @@ for_window [class="Tint2conf"]					floating disable
 
 for_window [class="^Gnome-font-viewer$"]		floating enable
 for_window [class="Imagewriter"] 				floating enable
-for_window [class="Font-manager"] 				floating enable
 for_window [class="Xfce4-taskmanager"]			floating enable
 for_window [class="Xfce4-appfinder"]			floating enable
 for_window [class="Usb-creator-gtk"]			floating enable

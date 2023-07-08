@@ -48,6 +48,7 @@ bindsym $mod+Shift+c reload
 
 ################# Stopping an application          
 bindsym $mod+q kill
+bindsym --whole-window $mod+button2 kill
 
 ################# Moving around in i3              
 floating_modifier $mod
@@ -296,6 +297,8 @@ bindsym $mod+Mod1+Ctrl+Left 	resize grow		width	1 px or 1 ppt
 bindsym control+Return		exec --no-startup-id kitty; focus
 bindsym control+mod1+u		exec --no-startup-id pavucontrol
 bindsym Print				exec --no-startup-id flameshot gui
+bindsym $mod+bracketleft	exec --no-startup-id $HOME/codebase/scripts/misc/common/launch-code
+bindsym $mod+bracketright	exec --no-startup-id $HOME/codebase/scripts/misc/common/launch-tweaks
 
 ################# variety for wallpapers      
 bindsym mod1+t exec --no-startup-id variety -title # next wallpaper
