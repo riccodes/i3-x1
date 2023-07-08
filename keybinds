@@ -211,7 +211,7 @@ mode "media" {
         bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
         bindsym slash     [class="YouTube Music"] focus, mode "default"; $dismissMedia
         bindsym Prior     exec --no-startup-id pactl -- set-sink-volume 3 100%
-        bindsym Next      exec --no-startup-id pactl -- set-sink-volume 3 50%
+        bindsym Next      exec --no-startup-id pactl -- set-sink-volume 3 30%
         bindsym Alt_R     scratchpad show
         bindsym Alt_L     scratchpad show
 

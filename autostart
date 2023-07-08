@@ -9,6 +9,7 @@ exec tint2 &
 exec --no-startup-id xfce4-power-manager &
 exec --no-startup-id libinput-gestures-setup start
 
+######################################################################################
 #exec_always --no-startup-id autotiling
 #exec_always --no-startup-id gnome-power-manager
 #exec --no-startup-id pamac-tray
