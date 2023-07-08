@@ -195,8 +195,9 @@ mode "resize" {
 
 ###### Media mode
 set $showMedia    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
-                    "mode: Media" "\nleft    ⏮\nright ⏭\nspc    ⏯\nup     🔊\ndw    🔉\n\nESC"\
-                    -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
+                    "mode: Media" \
+                    "\nleft    ⏮\nright ⏭\nspc    ⏯\nup     🔊\ndw    🔉\nAlt Scratchpad\n\nESC"\
+                    -i /usr/share/icons/Papirus-Dark/32x32/apps/applications-multimedia.svg
 set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
                     "exiting mode Media"\
                     -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
@@ -209,6 +210,8 @@ mode "media" {
         bindsym Up        exec --no-startup-id $HOME/codebase/scripts/misc/common/vol up
         bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
         bindsym slash     [class="YouTube Music"] focus, mode "default"; $dismissMedia
+        bindsym Alt_R     scratchpad show
+        bindsym Alt_L     scratchpad show
 
         bindsym Return mode "default"; $dismissMedia
         bindsym Escape mode "default"; $dismissMedia
@@ -225,6 +228,7 @@ set $showGaps    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_
                     -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/applications-all.svg
 set $dismissGaps exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_gaps\
                     "exiting mode Gaps"\
+                    -i /usr/share/icons/Papirus-Dark/64x64@2x/apps/applications-all.svg \
                      -t 500
 
 bindsym $mod+Shift+g mode "$mode_gaps"; $showGaps
