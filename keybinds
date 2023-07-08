@@ -200,7 +200,7 @@ set $showMedia    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode
                     -i /usr/share/icons/Papirus-Dark/32x32/apps/applications-multimedia.svg
 set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
                     "exiting mode Media"\
-                    -i /usr/share/icons/ePapirus-Dark/48x48/apps/appimagekit-duskplayer.svg
+                    -i /usr/share/icons/Papirus-Dark/32x32/apps/applications-multimedia.svg
 
 bindsym $mod+m mode "media"; $showMedia
 mode "media" {
@@ -210,6 +210,8 @@ mode "media" {
         bindsym Up        exec --no-startup-id $HOME/codebase/scripts/misc/common/vol up
         bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
         bindsym slash     [class="YouTube Music"] focus, mode "default"; $dismissMedia
+        bindsym Prior     exec --no-startup-id pactl -- set-sink-volume 3 100%
+        bindsym Next      exec --no-startup-id pactl -- set-sink-volume 3 50%
         bindsym Alt_R     scratchpad show
         bindsym Alt_L     scratchpad show
 
