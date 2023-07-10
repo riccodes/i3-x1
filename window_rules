@@ -32,11 +32,13 @@ for_window [instance="script-fu"] 				border normal
 
 for_window [class="note"]				floating enable, resize set 800 500, move position mouse, focus;
 
-for_window [class="TelegramDesktop"]	move scratchpad, resize set 1000 800, move position mouse, scratchpad show;
-for_window [class="Gpick"]			    move scratchpad, resize set 800 500,  move position mouse, scratchpad show;
-for_window [class="Pavucontrol"]		move scratchpad, resize set 1800 900, scratchpad show;
-for_window [class="1Password"]			move scratchpad, resize set 1000 650, move position mouse, scratchpad show;
-for_window [class="fragments"]			move scratchpad, resize set 1300 300, move position mouse, scratchpad show;
+for_window [class="TelegramDesktop"]	                move scratchpad, resize set 1000 800, move position mouse, scratchpad show;
+for_window [class="Gpick"]			                    move scratchpad, resize set 800 500,  move position mouse, scratchpad show;
+for_window [class="1Password"]			                move scratchpad, resize set 1000 650, move position mouse, scratchpad show;
+for_window [class="fragments"]			                move scratchpad, resize set 1300 300, move position mouse, scratchpad show;
+for_window [title="Tasks — Mozilla Firefox"]			move scratchpad, resize set 500 1050, move position mouse, scratchpad show;
 
+for_window [class="Pavucontrol"]		                move scratchpad, resize set 1800 900, scratchpad show;
+for_window [class="Controku"]                           move scratchpad, move position mouse, scratchpad show;
 ################# assign applications to workspaces
 # assign [class="kitty"]			$ws1
