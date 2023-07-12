@@ -41,4 +41,4 @@ for_window [title="Tasks — Mozilla Firefox"]			move scratchpad, resize set 500
 for_window [class="Pavucontrol"]		                move scratchpad, resize set 1800 900, scratchpad show;
 for_window [class="Controku"]                           move scratchpad, move position mouse, scratchpad show;
 ################# assign applications to workspaces
-# assign [class="kitty"]			$ws1
+#assign [class="Controku"]			$ws0
