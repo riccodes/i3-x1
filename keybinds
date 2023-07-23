@@ -96,16 +96,15 @@ bindsym $mod+d border toggle 6
 bindsym $mod+b exec $HOME/codebase/scripts/panel-utils/hideshow
 
 ################# Tiling parameters                
-bindsym $mod+h split h
-bindsym $mod+v split v
-
 bindsym $mod+f fullscreen toggle
 
-bindsym $mod+space	layout toggle splith splitv tabbed stacked
-bindsym $mod+z		layout tabbed
-bindsym $mod+s		layout stacked
+bindsym $mod+h exec --no-startup-id $HOME/codebase/scripts/misc/common/layout h
+bindsym $mod+v exec --no-startup-id $HOME/codebase/scripts/misc/common/layout v
 
-bindsym $mod+e		layout toggle split
+bindsym $mod+space	exec --no-startup-id $HOME/codebase/scripts/misc/common/layout
+bindsym $mod+z		exec --no-startup-id $HOME/codebase/scripts/misc/common/layout tabbed
+bindsym $mod+s		exec --no-startup-id $HOME/codebase/scripts/misc/common/layout stacked
+bindsym $mod+a		exec --no-startup-id $HOME/codebase/scripts/misc/common/layout split
 
 bindsym $mod+Mod1+Up    focus parent
 bindsym $mod+Mod1+Down  focus child
