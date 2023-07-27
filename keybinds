@@ -93,7 +93,7 @@ bindsym $mod+r		exec --no-startup-id $HOME/.config/rofi/scripts/rename
 bindsym $mod+d border toggle 6
 
 ############ hideshow tint2
-bindsym $mod+b exec $HOME/codebase/scripts/panel-utils/hideshow
+bindsym Ctrl+space exec $HOME/codebase/scripts/panel-utils/hideshow
 
 ################# Tiling parameters                
 bindsym $mod+f fullscreen toggle
@@ -251,10 +251,7 @@ mode "resize" {
 }
 
 ###### Media mode
-set $showMedia    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
-                    "mode: Media" \
-                    "\nleft    ⏮\nright ⏭\nspc    ⏯\nup     🔊\ndw    🔉\nAlt Scratchpad\n\nESC"\
-                    -i /usr/share/icons/Papirus-Dark/32x32/apps/applications-multimedia.svg
+set $showMedia    exec --no-startup-id $HOME/codebase/scripts/misc/common/media
 set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_media\
                     "exiting mode Media"\
                     -i /usr/share/icons/Papirus-Dark/32x32/apps/applications-multimedia.svg
@@ -262,8 +259,8 @@ set $dismissMedia exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode
 bindsym $mod+m mode "media"; $showMedia
 mode "media" {
         bindsym space	  exec --no-startup-id playerctl play-pause
-        bindsym Right     exec --no-startup-id playerctl next
-        bindsym Left      exec --no-startup-id playerctl previous
+        bindsym Right     $showMedia next
+        bindsym Left      $showMedia previous
         bindsym Up        exec --no-startup-id $HOME/codebase/scripts/misc/common/vol up
         bindsym Down      exec --no-startup-id $HOME/codebase/scripts/misc/common/vol down
         bindsym slash     [class="YouTube Music"] focus, mode "default"; $dismissMedia
