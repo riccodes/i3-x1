@@ -18,10 +18,10 @@ gaps outer 						6
 
 ################# theme
 # class                 border  backgr. text    indic
-client.focused          #7D6D5E #7D6D5E #ededed #7D6D5E #7D6D5E
+client.focused          #273923 #273923 #ededed #273923 #273923
 client.unfocused        #323232 #323232 #bdbdbd #323232
 client.focused_inactive #232323 #232323 #cdcdcd #232323
-client.placeholder      #323232 #3b4d3d #323232 #7D6D5E
+client.placeholder      #323232 #3b4d3d #323232 #273923
 client.urgent           #d42121 #d42121 #f7f7f7 #d42121
 client.background       #242424
 
