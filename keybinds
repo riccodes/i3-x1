@@ -170,6 +170,15 @@ mode "$mode_notes" {
     bindsym Escape mode "default"; $dismissNote
 }
 
+set $showCuts      exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_cuts "mode: No shortcuts"  
+set $dismissCuts   exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_cuts "exiting mode No shortcuts" 
+
+bindsym $mod+Shift+s mode "$mode_ncuts"; $showCuts
+set $mode_cuts noshortcuts:
+mode "$mode_cuts" {
+    bindsym Escape mode "default"; $dismissCuts
+}
+
 ######### scratchpad mode
 set $scratchpads        exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_scratchpad \
                             "mode: Scratchpad" "\n\nt[a]sks\ng[p]ick\n[r]oku\nyt-[m]usic\np[a]vu\n[t]elegram\n[1]password]\n\nESC" \
