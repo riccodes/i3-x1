@@ -216,6 +216,7 @@ set $showBrowser    exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mo
                                         \n[y]outbe\
                                         \n[w]orkflowy\
                                         \n[h]ome\
+                                        \n[.]Incognito\
                                         \n\nESC" \
                         -i /usr/share/icons/ePapirus-Dark/48x48/apps/abrowser.svg
 set $dismissBrowser exec --no-startup-id dunstify -h string:x-dunst-stack-tag:mode_browser \
@@ -226,6 +227,7 @@ bindsym $mod+w mode "$mode_browser"; $showBrowser
 set $mode_browser browser
 mode "$mode_browser" {
 
+    bindsym period exec firefox --private-window;                     $dismissBrowser, mode "default"
     bindsym h exec firefox;                                           $dismissBrowser, mode "default"
     bindsym a exec firefox --new-window https://amazon.com;           $dismissBrowser, mode "default"
     bindsym c exec firefox --new-window https://coolors.co;           $dismissBrowser, mode "default"
